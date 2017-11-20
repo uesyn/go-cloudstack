@@ -2714,7 +2714,7 @@ type DeployPremiumVirtualMachineResponse struct {
 	Zonename            string `json:"zonename,omitempty"`
 }
 
-func getNetworkIdByName(cs *CloudStackClient, networkname string) (string, error) {
+func getNetworkIdByName(cs *KCPSClient, networkname string) (string, error) {
 	params := cs.AccountDomain.NewListNetworksParams()
 	params.SetKeyword(networkname)
 	resp, err := cs.AccountDomain.ListNetworks(params)

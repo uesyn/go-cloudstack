@@ -49,7 +49,7 @@ func IsID(id string) bool {
 }
 
 // OptionFunc can be passed to the courtesy helper functions to set additional parameters
-type OptionFunc func(*CloudStackClient, interface{}) error
+type OptionFunc func(*KCPSClient, interface{}) error
 
 type CSError struct {
 	ErrorCode   int    `json:"errorcode"`
@@ -61,7 +61,7 @@ func (e *CSError) Error() error {
 	return fmt.Errorf("CloudStack API error %d (CSExceptionErrorCode: %d): %s", e.ErrorCode, e.CSErrorCode, e.ErrorText)
 }
 
-type CloudStackClient struct {
+type KCPSClient struct {
 	HTTPGETOnly bool // If `true` only use HTTP GET calls
 
 	client  *http.Client // The http client for communicating
@@ -89,8 +89,8 @@ type CloudStackClient struct {
 }
 
 // Creates a new client for communicating with CloudStack
-func newClient(apiurl string, apikey string, secret string, async bool, verifyssl bool) *CloudStackClient {
-	cs := &CloudStackClient{
+func newClient(apiurl string, apikey string, secret string, async bool, verifyssl bool) *KCPSClient {
+	cs := &KCPSClient{
 		client: &http.Client{
 			Transport: &http.Transport{
 				Proxy:           http.ProxyFromEnvironment,
@@ -124,7 +124,7 @@ func newClient(apiurl string, apikey string, secret string, async bool, verifyss
 // Default non-async client. So for async calls you need to implement and check the async job result yourself. When using
 // HTTPS with a self-signed certificate to connect to your CloudStack API, you would probably want to set 'verifyssl' to
 // false so the call ignores the SSL errors/warnings.
-func NewClient(apiurl string, apikey string, secret string, verifyssl bool) *CloudStackClient {
+func NewClient(apiurl string, apikey string, secret string, verifyssl bool) *KCPSClient {
 	cs := newClient(apiurl, apikey, secret, false, verifyssl)
 	return cs
 }
@@ -133,14 +133,14 @@ func NewClient(apiurl string, apikey string, secret string, verifyssl bool) *Clo
 // this client will wait until the async job is finished or until the configured AsyncTimeout is reached. When the async
 // job finishes successfully it will return actual object received from the API and nil, but when the timout is
 // reached it will return the initial object containing the async job ID for the running job and a warning.
-func NewAsyncClient(apiurl string, apikey string, secret string, verifyssl bool) *CloudStackClient {
+func NewAsyncClient(apiurl string, apikey string, secret string, verifyssl bool) *KCPSClient {
 	cs := newClient(apiurl, apikey, secret, true, verifyssl)
 	return cs
 }
 
 // When using the async client an api call will wait for the async call to finish before returning. The default is to poll for 300 seconds
 // seconds, to check if the async job is finished.
-func (cs *CloudStackClient) AsyncTimeout(timeoutInSeconds int64) {
+func (cs *KCPSClient) AsyncTimeout(timeoutInSeconds int64) {
 	cs.timeout = timeoutInSeconds
 }
 
@@ -148,7 +148,7 @@ var AsyncTimeoutErr = errors.New("Timeout while waiting for async job to finish"
 
 // A helper function that you can use to get the result of a running async job. If the job is not finished within the configured
 // timeout, the async job returns a AsyncTimeoutErr.
-func (cs *CloudStackClient) GetAsyncJobResult(jobid string, timeout int64) (json.RawMessage, error) {
+func (cs *KCPSClient) GetAsyncJobResult(jobid string, timeout int64) (json.RawMessage, error) {
 	var timer time.Duration
 	currentTime := time.Now().Unix()
 
@@ -189,7 +189,7 @@ func (cs *CloudStackClient) GetAsyncJobResult(jobid string, timeout int64) (json
 
 // A helper function that you can use to get the result of a running async job. If the job is not finished within the configured
 // timeout, the async job returns a AsyncTimeoutErr.
-func (cs *CloudStackClient) GetExAsyncJobResult(jobid string, timeout int64) (json.RawMessage, error) {
+func (cs *KCPSClient) GetExAsyncJobResult(jobid string, timeout int64) (json.RawMessage, error) {
 	var timer time.Duration
 	currentTime := time.Now().Unix()
 
@@ -231,7 +231,7 @@ func (cs *CloudStackClient) GetExAsyncJobResult(jobid string, timeout int64) (js
 // Execute the request against a CS API. Will return the raw JSON data returned by the API and nil if
 // no error occured. If the API returns an error the result will be nil and the HTTP error code and CS
 // error details. If a processing (code) error occurs the result will be nil and the generated error
-func (cs *CloudStackClient) newRequest(api string, params url.Values) (json.RawMessage, error) {
+func (cs *KCPSClient) newRequest(api string, params url.Values) (json.RawMessage, error) {
 
 	maxret := 5
 	retry := 0
@@ -260,7 +260,7 @@ func (cs *CloudStackClient) newRequest(api string, params url.Values) (json.RawM
 	return message, err
 }
 
-func (cs *CloudStackClient) oneRequest(api string, params url.Values) (json.RawMessage, error) {
+func (cs *KCPSClient) oneRequest(api string, params url.Values) (json.RawMessage, error) {
 	params.Set("apiKey", cs.apiKey)
 	params.Set("command", api)
 	params.Set("response", "json")
@@ -371,7 +371,7 @@ type VPCIDSetter interface {
 
 // WithVPCID takes a vpc ID and sets the `vpcid` parameter
 func WithVPCID(id string) OptionFunc {
-	return func(cs *CloudStackClient, p interface{}) error {
+	return func(cs *KCPSClient, p interface{}) error {
 		vs, ok := p.(VPCIDSetter)
 
 		if !ok || id == "" {
@@ -385,121 +385,121 @@ func WithVPCID(id string) OptionFunc {
 }
 
 type AsyncjobService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewAsyncjobService(cs *CloudStackClient) *AsyncjobService {
+func NewAsyncjobService(cs *KCPSClient) *AsyncjobService {
 	return &AsyncjobService{cs: cs}
 }
 
 type EventService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewEventService(cs *CloudStackClient) *EventService {
+func NewEventService(cs *KCPSClient) *EventService {
 	return &EventService{cs: cs}
 }
 
 type FirewallService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewFirewallService(cs *CloudStackClient) *FirewallService {
+func NewFirewallService(cs *KCPSClient) *FirewallService {
 	return &FirewallService{cs: cs}
 }
 
 type GuestOSService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewGuestOSService(cs *CloudStackClient) *GuestOSService {
+func NewGuestOSService(cs *KCPSClient) *GuestOSService {
 	return &GuestOSService{cs: cs}
 }
 
 type HostService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewHostService(cs *CloudStackClient) *HostService {
+func NewHostService(cs *KCPSClient) *HostService {
 	return &HostService{cs: cs}
 }
 
 type ISOService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewISOService(cs *CloudStackClient) *ISOService {
+func NewISOService(cs *KCPSClient) *ISOService {
 	return &ISOService{cs: cs}
 }
 
 type LoadBalancerService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewLoadBalancerService(cs *CloudStackClient) *LoadBalancerService {
+func NewLoadBalancerService(cs *KCPSClient) *LoadBalancerService {
 	return &LoadBalancerService{cs: cs}
 }
 
 type NatPortForwardService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewNatPortForwardService(cs *CloudStackClient) *NatPortForwardService {
+func NewNatPortForwardService(cs *KCPSClient) *NatPortForwardService {
 	return &NatPortForwardService{cs: cs}
 }
 
 type NicService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewNicService(cs *CloudStackClient) *NicService {
+func NewNicService(cs *KCPSClient) *NicService {
 	return &NicService{cs: cs}
 }
 
 type SnapshotService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewSnapshotService(cs *CloudStackClient) *SnapshotService {
+func NewSnapshotService(cs *KCPSClient) *SnapshotService {
 	return &SnapshotService{cs: cs}
 }
 
 type TemplateService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewTemplateService(cs *CloudStackClient) *TemplateService {
+func NewTemplateService(cs *KCPSClient) *TemplateService {
 	return &TemplateService{cs: cs}
 }
 
 type AccountDomainService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewAccountDomainService(cs *CloudStackClient) *AccountDomainService {
+func NewAccountDomainService(cs *KCPSClient) *AccountDomainService {
 	return &AccountDomainService{cs: cs}
 }
 
 type VirtualMachineService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewVirtualMachineService(cs *CloudStackClient) *VirtualMachineService {
+func NewVirtualMachineService(cs *KCPSClient) *VirtualMachineService {
 	return &VirtualMachineService{cs: cs}
 }
 
 type VolumeService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewVolumeService(cs *CloudStackClient) *VolumeService {
+func NewVolumeService(cs *KCPSClient) *VolumeService {
 	return &VolumeService{cs: cs}
 }
 
 type TagsService struct {
-	cs *CloudStackClient
+	cs *KCPSClient
 }
 
-func NewTagsService(cs *CloudStackClient) *TagsService {
+func NewTagsService(cs *KCPSClient) *TagsService {
 	return &TagsService{cs: cs}
 }
