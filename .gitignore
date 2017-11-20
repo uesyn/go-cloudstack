@@ -2,6 +2,8 @@
 *.o
 *.a
 *.so
+testing_utility.go
+*_test.go
 
 # Folders
 _obj

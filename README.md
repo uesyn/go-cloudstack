@@ -1,18 +1,16 @@
-go-cloudstack
+gokcps
 =============
-A CloudStack API client enabling Go programs to interact with CloudStack in a simple and uniform way
+A KDDI Cloud Platform Service API client enabling Go programs to interact with KCPS in a simple and uniform way
 
 ## Status
 
-This package covers the complete CloudStack API and is well tested. Of course there will still be untested corner cases when you have over 400 API commands that you can use, but over all it's save to use this package.
+This package covers the complete KCPS API. Of course there will still be untested corner cases when you have over 400 API commands that you can use, but over all it's save to use this package.
 
-To be able to find the API command you want, they are grouped by 'services' which match the grouping you can see/find on the [CloudStack API docs](http://cloudstack.apache.org/docs/api/apidocs-4.8/TOC_Root_Admin.html) website.
+To be able to find the API command you want, they are grouped by 'API Categories' which match the grouping you can see/find on the [KCPS API docs](https://iaas.cloud-platform.kddi.ne.jp/developer/api/cloud-stack-api/list/) website.
 
 ## Usage
 
-The cloudstack package is always generated against the latest stable CloudStack release (currently v4.8.x). Luckily the API doesn't change that much, and were it does we try to make sure the generated package is able handle both the old and the new case. Over time it will be impossible to support all version with just one package, but until now we seem to manage this pretty well.
-
-Please see the package documentation on [GoDocs](http://godoc.org/github.com/xanzy/go-cloudstack/cloudstack).
+TBA
 
 ## Example
 
