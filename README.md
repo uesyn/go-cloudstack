@@ -26,7 +26,7 @@ p := cli.VirtualMachine.NewDeployValueVirtualMachineParams(
 p.SetName("vmname2")
 
 // Create the new instance
-r, err := cs.VirtualMachine.DeployValueVirtualMachine(p)
+r, err := cli.VirtualMachine.DeployValueVirtualMachine(p)
 if err != nil {
 	log.Fatalf("Error creating the new instance %s: %s", name, err)
 }
