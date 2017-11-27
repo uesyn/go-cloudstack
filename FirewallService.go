@@ -283,14 +283,12 @@ func (p *CreateFirewallRuleParams) SetProtocol(v string) {
 
 // You should always use this function to get a new CreateFirewallRuleParams instance,
 // as then you are sure you have configured all required params
-func (s *FirewallService) NewCreateFirewallRuleParams(ipaddressid string, protocol string, ciderlist []string, startport int, endport int) *CreateFirewallRuleParams {
+func (s *FirewallService) NewCreateFirewallRuleParams(ipaddressid string, protocol string, ciderlist []string) *CreateFirewallRuleParams {
 	p := &CreateFirewallRuleParams{}
 	p.p = make(map[string]interface{})
 	p.p["ipaddressid"] = ipaddressid
 	p.p["protocol"] = protocol
 	p.p["cidrlist"] = ciderlist
-	p.p["startport"] = startport
-	p.p["endport"] = endport
 	return p
 }
 
