@@ -94,7 +94,7 @@ func (s *AsyncjobService) QueryAsyncJobResult(p *QueryAsyncJobResultParams) (*Qu
 	var err error
 
 	// We should be able to retry on failure as this call is idempotent
-	for i := 0; i < 3; i++ {
+	for i := 0; i < 10; i++ {
 		resp, err = s.cs.newRequest("queryAsyncJobResult", p.toURLValues())
 		if err == nil {
 			break
@@ -119,7 +119,7 @@ func (s *AsyncjobService) QueryExAsyncJobResult(p *QueryExAsyncJobResultParams) 
 	var err error
 
 	// We should be able to retry on failure as this call is idempotent
-	for i := 0; i < 3; i++ {
+	for i := 0; i < 10; i++ {
 		resp, err = s.cs.newRequest("queryExAsyncJobResult", p.toURLValues())
 		if err == nil {
 			break
