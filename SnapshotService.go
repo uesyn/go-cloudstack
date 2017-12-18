@@ -778,17 +778,17 @@ func (p *ListSnapshotPoliciesParams) toURLValues() url.Values {
 	if p.p == nil {
 		return u
 	}
-	if v, found := p.p["id"]; found {
-		u.Set("id", v.(string))
+	if v, found := p.p["volumeid"]; found {
+		u.Set("volumeid", v.(string))
 	}
 	return u
 }
 
-func (p *ListSnapshotPoliciesParams) SetId(v string) {
+func (p *ListSnapshotPoliciesParams) SetVolumeid(v string) {
 	if p.p == nil {
 		p.p = make(map[string]interface{})
 	}
-	p.p["id"] = v
+	p.p["volumeid"] = v
 	return
 }
 
@@ -798,39 +798,6 @@ func (s *SnapshotService) NewListSnapshotPoliciesParams() *ListSnapshotPoliciesP
 	p := &ListSnapshotPoliciesParams{}
 	p.p = make(map[string]interface{})
 	return p
-}
-
-// This is a courtesy helper function, which in some cases may not work as expected!
-func (s *SnapshotService) GetSnapshotPolicyByID(id string, opts ...OptionFunc) (*SnapshotPolicy, int, error) {
-	p := &ListSnapshotPoliciesParams{}
-	p.p = make(map[string]interface{})
-
-	p.p["id"] = id
-
-	for _, fn := range opts {
-		if err := fn(s.cs, p); err != nil {
-			return nil, -1, err
-		}
-	}
-
-	l, err := s.ListSnapshotPolicies(p)
-	if err != nil {
-		if strings.Contains(err.Error(), fmt.Sprintf(
-			"Invalid parameter id value=%s due to incorrect long value format, "+
-				"or entity does not exist", id)) {
-			return nil, 0, fmt.Errorf("No match found for %s: %+v", id, l)
-		}
-		return nil, -1, err
-	}
-
-	if l.Count == 0 {
-		return nil, l.Count, fmt.Errorf("No match found for %s: %+v", id, l)
-	}
-
-	if l.Count == 1 {
-		return l.SnapshotPolicies[0], l.Count, nil
-	}
-	return nil, l.Count, fmt.Errorf("There is more then one result for SnapshotPolicy UUID: %s!", id)
 }
 
 // Lists snapshot policies.
