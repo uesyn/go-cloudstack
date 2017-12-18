@@ -116,13 +116,12 @@ func (p *CreateTemplateParams) SetVolumeid(v string) {
 
 // You should always use this function to get a new CreateTemplateParams instance,
 // as then you are sure you have configured all required params
-func (s *TemplateService) NewCreateTemplateParams(snapshotid string, displaytext string, name string, ostypeid string) *CreateTemplateParams {
+func (s *TemplateService) NewCreateTemplateParams(displaytext string, name string, ostypeid string) *CreateTemplateParams {
 	p := &CreateTemplateParams{}
 	p.p = make(map[string]interface{})
 	p.p["displaytext"] = displaytext
 	p.p["name"] = name
 	p.p["ostypeid"] = ostypeid
-	p.p["snapshotid"] = snapshotid
 	return p
 }
 
