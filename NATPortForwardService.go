@@ -289,6 +289,10 @@ func (p *CreatePortForwardingRuleParams) toURLValues() url.Values {
 	if v, found := p.p["vmguestip"]; found {
 		u.Set("vmguestip", v.(string))
 	}
+	if v, found := p.p["openfirewall"]; found {
+		vv := strconv.FormatBool(v.(bool))
+		u.Set("openfirewall", vv)
+	}
 	return u
 }
 
@@ -356,6 +360,14 @@ func (p *CreatePortForwardingRuleParams) SetVmguestip(v string) {
 	return
 }
 
+func (p *CreatePortForwardingRuleParams) SetOpenfirewall(v bool) {
+	if p.p == nil {
+		p.p = make(map[string]interface{})
+	}
+	p.p["openfirewall"] = v
+	return
+}
+
 // You should always use this function to get a new CreatePortForwardingRuleParams instance,
 // as then you are sure you have configured all required params
 func (s *NatPortForwardService) NewCreatePortForwardingRuleParams(ipaddressid string, privateport int, protocol string, publicport int, virtualmachineid string) *CreatePortForwardingRuleParams {
@@ -366,6 +378,7 @@ func (s *NatPortForwardService) NewCreatePortForwardingRuleParams(ipaddressid st
 	p.p["protocol"] = protocol
 	p.p["publicport"] = publicport
 	p.p["virtualmachineid"] = virtualmachineid
+	p.p["openfirewall"] = false // Workaround for KCPS2
 	return p
 }
 

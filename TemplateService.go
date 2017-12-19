@@ -55,6 +55,10 @@ func (p *CreateTemplateParams) toURLValues() url.Values {
 	if v, found := p.p["volumeid"]; found {
 		u.Set("volumeid", v.(string))
 	}
+	if v, found := p.p["ispublic"]; found {
+		vv := strconv.FormatBool(v.(bool))
+		u.Set("ispublic", vv)
+	}
 	return u
 }
 
@@ -111,6 +115,14 @@ func (p *CreateTemplateParams) SetVolumeid(v string) {
 		p.p = make(map[string]interface{})
 	}
 	p.p["volumeid"] = v
+	return
+}
+
+func (p *CreateTemplateParams) SetIspublic(v bool) {
+	if p.p == nil {
+		p.p = make(map[string]interface{})
+	}
+	p.p["ispublic"] = v
 	return
 }
 

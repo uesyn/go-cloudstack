@@ -50,6 +50,10 @@ func (p *CreateLoadBalancerRuleParams) toURLValues() url.Values {
 	if v, found := p.p["publicipid"]; found {
 		u.Set("publicipid", v.(string))
 	}
+	if v, found := p.p["openfirewall"]; found {
+		vv := strconv.FormatBool(v.(bool))
+		u.Set("openfirewall", vv)
+	}
 	return u
 }
 
@@ -93,6 +97,14 @@ func (p *CreateLoadBalancerRuleParams) SetPublicport(v int) {
 	return
 }
 
+func (p *CreateLoadBalancerRuleParams) SetOpenfirewall(v bool) {
+	if p.p == nil {
+		p.p = make(map[string]interface{})
+	}
+	p.p["openfirewall"] = v
+	return
+}
+
 // You should always use this function to get a new CreateLoadBalancerRuleParams instance,
 // as then you are sure you have configured all required params
 func (s *LoadBalancerService) NewCreateLoadBalancerRuleParams(algorithm string, name string, privateport int, publicport int, publicipid string) *CreateLoadBalancerRuleParams {
@@ -103,6 +115,7 @@ func (s *LoadBalancerService) NewCreateLoadBalancerRuleParams(algorithm string, 
 	p.p["privateport"] = privateport
 	p.p["publicport"] = publicport
 	p.p["publicipid"] = publicipid
+	p.p["openfirewall"] = false // Workaround for KCPS2
 	return p
 }
 
