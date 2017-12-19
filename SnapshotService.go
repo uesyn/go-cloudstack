@@ -821,7 +821,6 @@ type ListSnapshotPoliciesResponse struct {
 }
 
 type SnapshotPolicy struct {
-	Fordisplay   bool   `json:"fordisplay,omitempty"`
 	Id           string `json:"id,omitempty"`
 	Intervaltype int    `json:"intervaltype,omitempty"`
 	Maxsnaps     int    `json:"maxsnaps,omitempty"`
@@ -922,18 +921,11 @@ func (s *SnapshotService) CreateSnapshotPolicy(p *CreateSnapshotPolicyParams) (*
 	if err := json.Unmarshal(resp, &r); err != nil {
 		return nil, err
 	}
-
 	return &r, nil
 }
 
 type CreateSnapshotPolicyResponse struct {
-	Fordisplay   bool   `json:"fordisplay,omitempty"`
-	Id           string `json:"id,omitempty"`
-	Intervaltype int    `json:"intervaltype,omitempty"`
-	Maxsnaps     int    `json:"maxsnaps,omitempty"`
-	Schedule     string `json:"schedule,omitempty"`
-	Timezone     string `json:"timezone,omitempty"`
-	Volumeid     string `json:"volumeid,omitempty"`
+	SnapshotPolicy `json:"snapshotpolicy,omiteempty"`
 }
 
 type DeleteSnapshotPoliciesParams struct {
