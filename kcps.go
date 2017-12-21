@@ -118,6 +118,7 @@ func newClient(apiurl string, apikey string, secret string, async bool, verifyss
 	cs.AccountDomain = NewAccountDomainService(cs)
 	cs.VirtualMachine = NewVirtualMachineService(cs)
 	cs.Volume = NewVolumeService(cs)
+	cs.Tags = NewTagsService(cs)
 	return cs
 }
 

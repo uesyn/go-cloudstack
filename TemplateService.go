@@ -205,22 +205,11 @@ type CreateTemplateResponse struct {
 	Sourcetemplateid      string            `json:"sourcetemplateid,omitempty"`
 	Sshkeyenabled         bool              `json:"sshkeyenabled,omitempty"`
 	Status                string            `json:"status,omitempty"`
-	Tags                  []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Templatetag  string `json:"templatetag,omitempty"`
-	Templatetype string `json:"templatetype,omitempty"`
-	Zoneid       string `json:"zoneid,omitempty"`
-	Zonename     string `json:"zonename,omitempty"`
+	Tags                  []Tag             `json:"tags,omitempty"`
+	Templatetag           string            `json:"templatetag,omitempty"`
+	Templatetype          string            `json:"templatetype,omitempty"`
+	Zoneid                string            `json:"zoneid,omitempty"`
+	Zonename              string            `json:"zonename,omitempty"`
 }
 
 type DeleteTemplateParams struct {
@@ -473,22 +462,11 @@ type Template struct {
 	Sourcetemplateid      string            `json:"sourcetemplateid,omitempty"`
 	Sshkeyenabled         bool              `json:"sshkeyenabled,omitempty"`
 	Status                string            `json:"status,omitempty"`
-	Tags                  []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Templatetag  string `json:"templatetag,omitempty"`
-	Templatetype string `json:"templatetype,omitempty"`
-	Zoneid       string `json:"zoneid,omitempty"`
-	Zonename     string `json:"zonename,omitempty"`
+	Tags                  []Tag             `json:"tags,omitempty"`
+	Templatetag           string            `json:"templatetag,omitempty"`
+	Templatetype          string            `json:"templatetype,omitempty"`
+	Zoneid                string            `json:"zoneid,omitempty"`
+	Zonename              string            `json:"zonename,omitempty"`
 }
 
 type RegisterTemplateParams struct {
@@ -647,22 +625,11 @@ type RegisterTemplate struct {
 	Sourcetemplateid      string            `json:"sourcetemplateid,omitempty"`
 	Sshkeyenabled         bool              `json:"sshkeyenabled,omitempty"`
 	Status                string            `json:"status,omitempty"`
-	Tags                  []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Templatetag  string `json:"templatetag,omitempty"`
-	Templatetype string `json:"templatetype,omitempty"`
-	Zoneid       string `json:"zoneid,omitempty"`
-	Zonename     string `json:"zonename,omitempty"`
+	Tags                  []Tag             `json:"tags,omitempty"`
+	Templatetag           string            `json:"templatetag,omitempty"`
+	Templatetype          string            `json:"templatetype,omitempty"`
+	Zoneid                string            `json:"zoneid,omitempty"`
+	Zonename              string            `json:"zonename,omitempty"`
 }
 
 type UpdateTemplateParams struct {
@@ -801,22 +768,11 @@ type UpdateTemplateResponse struct {
 	Sourcetemplateid      string            `json:"sourcetemplateid,omitempty"`
 	Sshkeyenabled         bool              `json:"sshkeyenabled,omitempty"`
 	Status                string            `json:"status,omitempty"`
-	Tags                  []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Templatetag  string `json:"templatetag,omitempty"`
-	Templatetype string `json:"templatetype,omitempty"`
-	Zoneid       string `json:"zoneid,omitempty"`
-	Zonename     string `json:"zonename,omitempty"`
+	Tags                  []Tag             `json:"tags,omitempty"`
+	Templatetag           string            `json:"templatetag,omitempty"`
+	Templatetype          string            `json:"templatetype,omitempty"`
+	Zoneid                string            `json:"zoneid,omitempty"`
+	Zonename              string            `json:"zonename,omitempty"`
 }
 
 type UpdateTemplatePermissionsParams struct {

@@ -106,22 +106,11 @@ type CreateSnapshotResponse struct {
 	Revertable   bool   `json:"revertable,omitempty"`
 	Snapshottype string `json:"snapshottype,omitempty"`
 	State        string `json:"state,omitempty"`
-	Tags         []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Volumeid   string `json:"volumeid,omitempty"`
-	Volumename string `json:"volumename,omitempty"`
-	Volumetype string `json:"volumetype,omitempty"`
-	Zoneid     string `json:"zoneid,omitempty"`
+	Tags         []Tag  `json:"tags,omitempty"`
+	Volumeid     string `json:"volumeid,omitempty"`
+	Volumename   string `json:"volumename,omitempty"`
+	Volumetype   string `json:"volumetype,omitempty"`
+	Zoneid       string `json:"zoneid,omitempty"`
 }
 
 type ListSnapshotsParams struct {
@@ -260,22 +249,11 @@ type Snapshot struct {
 	Revertable   bool   `json:"revertable,omitempty"`
 	Snapshottype string `json:"snapshottype,omitempty"`
 	State        string `json:"state,omitempty"`
-	Tags         []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Volumeid   string `json:"volumeid,omitempty"`
-	Volumename string `json:"volumename,omitempty"`
-	Volumetype string `json:"volumetype,omitempty"`
-	Zoneid     string `json:"zoneid,omitempty"`
+	Tags         []Tag  `json:"tags,omitempty"`
+	Volumeid     string `json:"volumeid,omitempty"`
+	Volumename   string `json:"volumename,omitempty"`
+	Volumetype   string `json:"volumetype,omitempty"`
+	Zoneid       string `json:"zoneid,omitempty"`
 }
 
 type DeleteSnapshotParams struct {
@@ -688,18 +666,7 @@ type RevertToVMSnapshotResponse struct {
 			Ruleid            string `json:"ruleid,omitempty"`
 			Securitygroupname string `json:"securitygroupname,omitempty"`
 			Startport         int    `json:"startport,omitempty"`
-			Tags              []struct {
-				Account      string `json:"account,omitempty"`
-				Customer     string `json:"customer,omitempty"`
-				Domain       string `json:"domain,omitempty"`
-				Domainid     string `json:"domainid,omitempty"`
-				Key          string `json:"key,omitempty"`
-				Project      string `json:"project,omitempty"`
-				Projectid    string `json:"projectid,omitempty"`
-				Resourceid   string `json:"resourceid,omitempty"`
-				Resourcetype string `json:"resourcetype,omitempty"`
-				Value        string `json:"value,omitempty"`
-			} `json:"tags,omitempty"`
+			Tags              []Tag  `json:"tags,omitempty"`
 		} `json:"egressrule,omitempty"`
 		Id          string `json:"id,omitempty"`
 		Ingressrule []struct {
@@ -712,34 +679,12 @@ type RevertToVMSnapshotResponse struct {
 			Ruleid            string `json:"ruleid,omitempty"`
 			Securitygroupname string `json:"securitygroupname,omitempty"`
 			Startport         int    `json:"startport,omitempty"`
-			Tags              []struct {
-				Account      string `json:"account,omitempty"`
-				Customer     string `json:"customer,omitempty"`
-				Domain       string `json:"domain,omitempty"`
-				Domainid     string `json:"domainid,omitempty"`
-				Key          string `json:"key,omitempty"`
-				Project      string `json:"project,omitempty"`
-				Projectid    string `json:"projectid,omitempty"`
-				Resourceid   string `json:"resourceid,omitempty"`
-				Resourcetype string `json:"resourcetype,omitempty"`
-				Value        string `json:"value,omitempty"`
-			} `json:"tags,omitempty"`
+			Tags              []Tag  `json:"tags,omitempty"`
 		} `json:"ingressrule,omitempty"`
-		Name      string `json:"name,omitempty"`
-		Project   string `json:"project,omitempty"`
-		Projectid string `json:"projectid,omitempty"`
-		Tags      []struct {
-			Account      string `json:"account,omitempty"`
-			Customer     string `json:"customer,omitempty"`
-			Domain       string `json:"domain,omitempty"`
-			Domainid     string `json:"domainid,omitempty"`
-			Key          string `json:"key,omitempty"`
-			Project      string `json:"project,omitempty"`
-			Projectid    string `json:"projectid,omitempty"`
-			Resourceid   string `json:"resourceid,omitempty"`
-			Resourcetype string `json:"resourcetype,omitempty"`
-			Value        string `json:"value,omitempty"`
-		} `json:"tags,omitempty"`
+		Name                string   `json:"name,omitempty"`
+		Project             string   `json:"project,omitempty"`
+		Projectid           string   `json:"projectid,omitempty"`
+		Tags                []Tag    `json:"tags,omitempty"`
 		Virtualmachinecount int      `json:"virtualmachinecount,omitempty"`
 		Virtualmachineids   []string `json:"virtualmachineids,omitempty"`
 	} `json:"securitygroup,omitempty"`
@@ -747,18 +692,7 @@ type RevertToVMSnapshotResponse struct {
 	Serviceofferingname string `json:"serviceofferingname,omitempty"`
 	Servicestate        string `json:"servicestate,omitempty"`
 	State               string `json:"state,omitempty"`
-	Tags                []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	Tags                []Tag  `json:"tags,omitempty"`
 	Templatedisplaytext string `json:"templatedisplaytext,omitempty"`
 	Templateid          string `json:"templateid,omitempty"`
 	Templatename        string `json:"templatename,omitempty"`

@@ -239,15 +239,6 @@ func (p *ListTagsParams) toURLValues() url.Values {
 	if p.p == nil {
 		return u
 	}
-	if v, found := p.p["account"]; found {
-		u.Set("account", v.(string))
-	}
-	if v, found := p.p["customer"]; found {
-		u.Set("customer", v.(string))
-	}
-	if v, found := p.p["domainid"]; found {
-		u.Set("domainid", v.(string))
-	}
 	if v, found := p.p["isrecursive"]; found {
 		vv := strconv.FormatBool(v.(bool))
 		u.Set("isrecursive", vv)
@@ -262,17 +253,6 @@ func (p *ListTagsParams) toURLValues() url.Values {
 		vv := strconv.FormatBool(v.(bool))
 		u.Set("listall", vv)
 	}
-	if v, found := p.p["page"]; found {
-		vv := strconv.Itoa(v.(int))
-		u.Set("page", vv)
-	}
-	if v, found := p.p["pagesize"]; found {
-		vv := strconv.Itoa(v.(int))
-		u.Set("pagesize", vv)
-	}
-	if v, found := p.p["projectid"]; found {
-		u.Set("projectid", v.(string))
-	}
 	if v, found := p.p["resourceid"]; found {
 		u.Set("resourceid", v.(string))
 	}
@@ -283,30 +263,6 @@ func (p *ListTagsParams) toURLValues() url.Values {
 		u.Set("value", v.(string))
 	}
 	return u
-}
-
-func (p *ListTagsParams) SetAccount(v string) {
-	if p.p == nil {
-		p.p = make(map[string]interface{})
-	}
-	p.p["account"] = v
-	return
-}
-
-func (p *ListTagsParams) SetCustomer(v string) {
-	if p.p == nil {
-		p.p = make(map[string]interface{})
-	}
-	p.p["customer"] = v
-	return
-}
-
-func (p *ListTagsParams) SetDomainid(v string) {
-	if p.p == nil {
-		p.p = make(map[string]interface{})
-	}
-	p.p["domainid"] = v
-	return
 }
 
 func (p *ListTagsParams) SetIsrecursive(v bool) {
@@ -338,30 +294,6 @@ func (p *ListTagsParams) SetListall(v bool) {
 		p.p = make(map[string]interface{})
 	}
 	p.p["listall"] = v
-	return
-}
-
-func (p *ListTagsParams) SetPage(v int) {
-	if p.p == nil {
-		p.p = make(map[string]interface{})
-	}
-	p.p["page"] = v
-	return
-}
-
-func (p *ListTagsParams) SetPagesize(v int) {
-	if p.p == nil {
-		p.p = make(map[string]interface{})
-	}
-	p.p["pagesize"] = v
-	return
-}
-
-func (p *ListTagsParams) SetProjectid(v string) {
-	if p.p == nil {
-		p.p = make(map[string]interface{})
-	}
-	p.p["projectid"] = v
 	return
 }
 
@@ -413,8 +345,8 @@ func (s *TagsService) ListTags(p *ListTagsParams) (*ListTagsResponse, error) {
 }
 
 type ListTagsResponse struct {
-	Count int    `json:"count"`
-	Tags  []*Tag `json:"tag"`
+	Count int   `json:"count"`
+	Tags  []Tag `json:"tag"`
 }
 
 type Tag struct {

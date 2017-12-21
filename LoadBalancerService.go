@@ -174,19 +174,8 @@ type CreateLoadBalancerRuleResponse struct {
 	Publicipid  string `json:"publicipid,omitempty"`
 	Publicport  string `json:"publicport,omitempty"`
 	State       string `json:"state,omitempty"`
-	Tags        []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Zoneid string `json:"zoneid,omitempty"`
+	Tags        []Tag  `json:"tags,omitempty"`
+	Zoneid      string `json:"zoneid,omitempty"`
 }
 
 type DeleteLoadBalancerRuleParams struct {
@@ -751,19 +740,8 @@ type LoadBalancerRule struct {
 	Publicipid  string `json:"publicipid,omitempty"`
 	Publicport  string `json:"publicport,omitempty"`
 	State       string `json:"state,omitempty"`
-	Tags        []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Zoneid string `json:"zoneid,omitempty"`
+	Tags        []Tag  `json:"tags,omitempty"`
+	Zoneid      string `json:"zoneid,omitempty"`
 }
 
 type ListLBStickinessPoliciesParams struct {
@@ -1028,17 +1006,6 @@ type UpdateLoadBalancerRuleResponse struct {
 	Publicipid  string `json:"publicipid,omitempty"`
 	Publicport  string `json:"publicport,omitempty"`
 	State       string `json:"state,omitempty"`
-	Tags        []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Zoneid string `json:"zoneid,omitempty"`
+	Tags        []Tag  `json:"tags,omitempty"`
+	Zoneid      string `json:"zoneid,omitempty"`
 }

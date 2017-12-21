@@ -350,22 +350,11 @@ type Network struct {
 			State                        string   `json:"state,omitempty"`
 		} `json:"provider,omitempty"`
 	} `json:"service,omitempty"`
-	Specifyipranges  bool   `json:"specifyipranges,omitempty"`
-	State            string `json:"state,omitempty"`
-	Strechedl2subnet bool   `json:"strechedl2subnet,omitempty"`
-	Subdomainaccess  bool   `json:"subdomainaccess,omitempty"`
-	Tags             []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	Specifyipranges   bool     `json:"specifyipranges,omitempty"`
+	State             string   `json:"state,omitempty"`
+	Strechedl2subnet  bool     `json:"strechedl2subnet,omitempty"`
+	Subdomainaccess   bool     `json:"subdomainaccess,omitempty"`
+	Tags              []Tag    `json:"tags,omitempty"`
 	Traffictype       string   `json:"traffictype,omitempty"`
 	Type              string   `json:"type,omitempty"`
 	Vlan              string   `json:"vlan,omitempty"`
@@ -923,17 +912,6 @@ type Zone struct {
 	Networktype           string            `json:"networktype,omitempty"`
 	Resourcedetails       map[string]string `json:"resourcedetails,omitempty"`
 	Securitygroupsenabled bool              `json:"securitygroupsenabled,omitempty"`
-	Tags                  []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
-	Zonetoken string `json:"zonetoken,omitempty"`
+	Tags                  []Tag             `json:"tags,omitempty"`
+	Zonetoken             string            `json:"zonetoken,omitempty"`
 }
