@@ -619,52 +619,30 @@ type RevertToVMSnapshotResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []struct {
-		Broadcasturi string `json:"broadcasturi,omitempty"`
-		Deviceid     string `json:"deviceid,omitempty"`
-		Gateway      string `json:"gateway,omitempty"`
-		Id           string `json:"id,omitempty"`
-		Ip6address   string `json:"ip6address,omitempty"`
-		Ip6cidr      string `json:"ip6cidr,omitempty"`
-		Ip6gateway   string `json:"ip6gateway,omitempty"`
-		Ipaddress    string `json:"ipaddress,omitempty"`
-		Isdefault    bool   `json:"isdefault,omitempty"`
-		Isolationuri string `json:"isolationuri,omitempty"`
-		Macaddress   string `json:"macaddress,omitempty"`
-		Netmask      string `json:"netmask,omitempty"`
-		Networkid    string `json:"networkid,omitempty"`
-		Networkname  string `json:"networkname,omitempty"`
-		Secondaryip  []struct {
-			Id        string `json:"id,omitempty"`
-			Ipaddress string `json:"ipaddress,omitempty"`
-		} `json:"secondaryip,omitempty"`
-		Traffictype      string `json:"traffictype,omitempty"`
-		Type             string `json:"type,omitempty"`
-		Virtualmachineid string `json:"virtualmachineid,omitempty"`
-	} `json:"nic,omitempty"`
-	Ostypeid            int64           `json:"ostypeid,omitempty"`
-	Password            string          `json:"password,omitempty"`
-	Passwordenabled     bool            `json:"passwordenabled,omitempty"`
-	Project             string          `json:"project,omitempty"`
-	Projectid           string          `json:"projectid,omitempty"`
-	Publicip            string          `json:"publicip,omitempty"`
-	Publicipid          string          `json:"publicipid,omitempty"`
-	Rootdeviceid        int64           `json:"rootdeviceid,omitempty"`
-	Rootdevicetype      string          `json:"rootdevicetype,omitempty"`
-	Securitygroup       []Securitygroup `json:"securitygroup,omitempty"`
-	Serviceofferingid   string          `json:"serviceofferingid,omitempty"`
-	Serviceofferingname string          `json:"serviceofferingname,omitempty"`
-	Servicestate        string          `json:"servicestate,omitempty"`
-	State               string          `json:"state,omitempty"`
-	Tags                []Tag           `json:"tags,omitempty"`
-	Templatedisplaytext string          `json:"templatedisplaytext,omitempty"`
-	Templateid          string          `json:"templateid,omitempty"`
-	Templatename        string          `json:"templatename,omitempty"`
-	Userid              string          `json:"userid,omitempty"`
-	Username            string          `json:"username,omitempty"`
-	Vgpu                string          `json:"vgpu,omitempty"`
-	Zoneid              string          `json:"zoneid,omitempty"`
-	Zonename            string          `json:"zonename,omitempty"`
+	Nic                   []Nic             `json:"nic,omitempty"`
+	Ostypeid              int64             `json:"ostypeid,omitempty"`
+	Password              string            `json:"password,omitempty"`
+	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
+	Project               string            `json:"project,omitempty"`
+	Projectid             string            `json:"projectid,omitempty"`
+	Publicip              string            `json:"publicip,omitempty"`
+	Publicipid            string            `json:"publicipid,omitempty"`
+	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
+	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
+	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
+	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
+	Servicestate          string            `json:"servicestate,omitempty"`
+	State                 string            `json:"state,omitempty"`
+	Tags                  []Tag             `json:"tags,omitempty"`
+	Templatedisplaytext   string            `json:"templatedisplaytext,omitempty"`
+	Templateid            string            `json:"templateid,omitempty"`
+	Templatename          string            `json:"templatename,omitempty"`
+	Userid                string            `json:"userid,omitempty"`
+	Username              string            `json:"username,omitempty"`
+	Vgpu                  string            `json:"vgpu,omitempty"`
+	Zoneid                string            `json:"zoneid,omitempty"`
+	Zonename              string            `json:"zonename,omitempty"`
 }
 
 type ListSnapshotPoliciesParams struct {
