@@ -271,7 +271,7 @@ type DeployValueVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -414,7 +414,7 @@ type DestroyVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -562,7 +562,7 @@ type RebootVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -710,7 +710,7 @@ type StartVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -875,7 +875,7 @@ type StopVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -1028,7 +1028,7 @@ type ResetPasswordForVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -1233,7 +1233,7 @@ type VirtualMachine struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -1371,7 +1371,7 @@ type ChangeServiceForVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -1770,7 +1770,7 @@ type DeployPremiumVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`

@@ -151,7 +151,7 @@ type AttachIsoResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -293,7 +293,7 @@ type DetachIsoResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`

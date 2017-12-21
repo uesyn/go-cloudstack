@@ -237,8 +237,8 @@ func (s *NicService) ListNics(p *ListNicsParams) (*ListNicsResponse, error) {
 }
 
 type ListNicsResponse struct {
-	Count int    `json:"count"`
-	Nics  []*Nic `json:"nic"`
+	Count int   `json:"count"`
+	Nics  []Nic `json:"nic"`
 }
 
 type Nic struct {
@@ -737,7 +737,7 @@ type RemoveNicFromVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
