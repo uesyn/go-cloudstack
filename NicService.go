@@ -412,38 +412,27 @@ type ListPublicIpAddressesResponse struct {
 }
 
 type PublicIpAddress struct {
-	Account               string `json:"account,omitempty"`
-	Allocated             string `json:"allocated,omitempty"`
-	Associatednetworkid   string `json:"associatednetworkid,omitempty"`
-	Associatednetworkname string `json:"associatednetworkname,omitempty"`
-	Domain                string `json:"domain,omitempty"`
-	Domainid              string `json:"domainid,omitempty"`
-	Fordisplay            bool   `json:"fordisplay,omitempty"`
-	Forvirtualnetwork     bool   `json:"forvirtualnetwork,omitempty"`
-	Id                    string `json:"id,omitempty"`
-	Ipaddress             string `json:"ipaddress,omitempty"`
-	Isportable            bool   `json:"isportable,omitempty"`
-	Issourcenat           bool   `json:"issourcenat,omitempty"`
-	Isstaticnat           bool   `json:"isstaticnat,omitempty"`
-	Issystem              bool   `json:"issystem,omitempty"`
-	Networkid             string `json:"networkid,omitempty"`
-	Physicalnetworkid     string `json:"physicalnetworkid,omitempty"`
-	Project               string `json:"project,omitempty"`
-	Projectid             string `json:"projectid,omitempty"`
-	Purpose               string `json:"purpose,omitempty"`
-	State                 string `json:"state,omitempty"`
-	Tags                  []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	Account                   string `json:"account,omitempty"`
+	Allocated                 string `json:"allocated,omitempty"`
+	Associatednetworkid       string `json:"associatednetworkid,omitempty"`
+	Associatednetworkname     string `json:"associatednetworkname,omitempty"`
+	Domain                    string `json:"domain,omitempty"`
+	Domainid                  string `json:"domainid,omitempty"`
+	Fordisplay                bool   `json:"fordisplay,omitempty"`
+	Forvirtualnetwork         bool   `json:"forvirtualnetwork,omitempty"`
+	Id                        string `json:"id,omitempty"`
+	Ipaddress                 string `json:"ipaddress,omitempty"`
+	Isportable                bool   `json:"isportable,omitempty"`
+	Issourcenat               bool   `json:"issourcenat,omitempty"`
+	Isstaticnat               bool   `json:"isstaticnat,omitempty"`
+	Issystem                  bool   `json:"issystem,omitempty"`
+	Networkid                 string `json:"networkid,omitempty"`
+	Physicalnetworkid         string `json:"physicalnetworkid,omitempty"`
+	Project                   string `json:"project,omitempty"`
+	Projectid                 string `json:"projectid,omitempty"`
+	Purpose                   string `json:"purpose,omitempty"`
+	State                     string `json:"state,omitempty"`
+	Tags                      []Tag  `json:"tags,omitempty"`
 	Virtualmachinedisplayname string `json:"virtualmachinedisplayname,omitempty"`
 	Virtualmachineid          string `json:"virtualmachineid,omitempty"`
 	Virtualmachinename        string `json:"virtualmachinename,omitempty"`
@@ -641,18 +630,7 @@ type AddNicToVirtualMachineResponse struct {
 			Ruleid            string `json:"ruleid,omitempty"`
 			Securitygroupname string `json:"securitygroupname,omitempty"`
 			Startport         int    `json:"startport,omitempty"`
-			Tags              []struct {
-				Account      string `json:"account,omitempty"`
-				Customer     string `json:"customer,omitempty"`
-				Domain       string `json:"domain,omitempty"`
-				Domainid     string `json:"domainid,omitempty"`
-				Key          string `json:"key,omitempty"`
-				Project      string `json:"project,omitempty"`
-				Projectid    string `json:"projectid,omitempty"`
-				Resourceid   string `json:"resourceid,omitempty"`
-				Resourcetype string `json:"resourcetype,omitempty"`
-				Value        string `json:"value,omitempty"`
-			} `json:"tags,omitempty"`
+			Tags              []Tag  `json:"tags,omitempty"`
 		} `json:"egressrule,omitempty"`
 		Id          string `json:"id,omitempty"`
 		Ingressrule []struct {
@@ -665,34 +643,12 @@ type AddNicToVirtualMachineResponse struct {
 			Ruleid            string `json:"ruleid,omitempty"`
 			Securitygroupname string `json:"securitygroupname,omitempty"`
 			Startport         int    `json:"startport,omitempty"`
-			Tags              []struct {
-				Account      string `json:"account,omitempty"`
-				Customer     string `json:"customer,omitempty"`
-				Domain       string `json:"domain,omitempty"`
-				Domainid     string `json:"domainid,omitempty"`
-				Key          string `json:"key,omitempty"`
-				Project      string `json:"project,omitempty"`
-				Projectid    string `json:"projectid,omitempty"`
-				Resourceid   string `json:"resourceid,omitempty"`
-				Resourcetype string `json:"resourcetype,omitempty"`
-				Value        string `json:"value,omitempty"`
-			} `json:"tags,omitempty"`
+			Tags              []Tag  `json:"tags,omitempty"`
 		} `json:"ingressrule,omitempty"`
-		Name      string `json:"name,omitempty"`
-		Project   string `json:"project,omitempty"`
-		Projectid string `json:"projectid,omitempty"`
-		Tags      []struct {
-			Account      string `json:"account,omitempty"`
-			Customer     string `json:"customer,omitempty"`
-			Domain       string `json:"domain,omitempty"`
-			Domainid     string `json:"domainid,omitempty"`
-			Key          string `json:"key,omitempty"`
-			Project      string `json:"project,omitempty"`
-			Projectid    string `json:"projectid,omitempty"`
-			Resourceid   string `json:"resourceid,omitempty"`
-			Resourcetype string `json:"resourcetype,omitempty"`
-			Value        string `json:"value,omitempty"`
-		} `json:"tags,omitempty"`
+		Name                string   `json:"name,omitempty"`
+		Project             string   `json:"project,omitempty"`
+		Projectid           string   `json:"projectid,omitempty"`
+		Tags                []Tag    `json:"tags,omitempty"`
 		Virtualmachinecount int      `json:"virtualmachinecount,omitempty"`
 		Virtualmachineids   []string `json:"virtualmachineids,omitempty"`
 	} `json:"securitygroup,omitempty"`
@@ -700,18 +656,7 @@ type AddNicToVirtualMachineResponse struct {
 	Serviceofferingname string `json:"serviceofferingname,omitempty"`
 	Servicestate        string `json:"servicestate,omitempty"`
 	State               string `json:"state,omitempty"`
-	Tags                []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	Tags                []Tag  `json:"tags,omitempty"`
 	Templatedisplaytext string `json:"templatedisplaytext,omitempty"`
 	Templateid          string `json:"templateid,omitempty"`
 	Templatename        string `json:"templatename,omitempty"`
@@ -897,18 +842,7 @@ type RemoveNicFromVirtualMachineResponse struct {
 			Ruleid            string `json:"ruleid,omitempty"`
 			Securitygroupname string `json:"securitygroupname,omitempty"`
 			Startport         int    `json:"startport,omitempty"`
-			Tags              []struct {
-				Account      string `json:"account,omitempty"`
-				Customer     string `json:"customer,omitempty"`
-				Domain       string `json:"domain,omitempty"`
-				Domainid     string `json:"domainid,omitempty"`
-				Key          string `json:"key,omitempty"`
-				Project      string `json:"project,omitempty"`
-				Projectid    string `json:"projectid,omitempty"`
-				Resourceid   string `json:"resourceid,omitempty"`
-				Resourcetype string `json:"resourcetype,omitempty"`
-				Value        string `json:"value,omitempty"`
-			} `json:"tags,omitempty"`
+			Tags              []Tag  `json:"tags,omitempty"`
 		} `json:"egressrule,omitempty"`
 		Id          string `json:"id,omitempty"`
 		Ingressrule []struct {
@@ -921,34 +855,12 @@ type RemoveNicFromVirtualMachineResponse struct {
 			Ruleid            string `json:"ruleid,omitempty"`
 			Securitygroupname string `json:"securitygroupname,omitempty"`
 			Startport         int    `json:"startport,omitempty"`
-			Tags              []struct {
-				Account      string `json:"account,omitempty"`
-				Customer     string `json:"customer,omitempty"`
-				Domain       string `json:"domain,omitempty"`
-				Domainid     string `json:"domainid,omitempty"`
-				Key          string `json:"key,omitempty"`
-				Project      string `json:"project,omitempty"`
-				Projectid    string `json:"projectid,omitempty"`
-				Resourceid   string `json:"resourceid,omitempty"`
-				Resourcetype string `json:"resourcetype,omitempty"`
-				Value        string `json:"value,omitempty"`
-			} `json:"tags,omitempty"`
+			Tags              []Tag  `json:"tags,omitempty"`
 		} `json:"ingressrule,omitempty"`
-		Name      string `json:"name,omitempty"`
-		Project   string `json:"project,omitempty"`
-		Projectid string `json:"projectid,omitempty"`
-		Tags      []struct {
-			Account      string `json:"account,omitempty"`
-			Customer     string `json:"customer,omitempty"`
-			Domain       string `json:"domain,omitempty"`
-			Domainid     string `json:"domainid,omitempty"`
-			Key          string `json:"key,omitempty"`
-			Project      string `json:"project,omitempty"`
-			Projectid    string `json:"projectid,omitempty"`
-			Resourceid   string `json:"resourceid,omitempty"`
-			Resourcetype string `json:"resourcetype,omitempty"`
-			Value        string `json:"value,omitempty"`
-		} `json:"tags,omitempty"`
+		Name                string   `json:"name,omitempty"`
+		Project             string   `json:"project,omitempty"`
+		Projectid           string   `json:"projectid,omitempty"`
+		Tags                []Tag    `json:"tags,omitempty"`
 		Virtualmachinecount int      `json:"virtualmachinecount,omitempty"`
 		Virtualmachineids   []string `json:"virtualmachineids,omitempty"`
 	} `json:"securitygroup,omitempty"`
@@ -956,18 +868,7 @@ type RemoveNicFromVirtualMachineResponse struct {
 	Serviceofferingname string `json:"serviceofferingname,omitempty"`
 	Servicestate        string `json:"servicestate,omitempty"`
 	State               string `json:"state,omitempty"`
-	Tags                []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	Tags                []Tag  `json:"tags,omitempty"`
 	Templatedisplaytext string `json:"templatedisplaytext,omitempty"`
 	Templateid          string `json:"templateid,omitempty"`
 	Templatename        string `json:"templatename,omitempty"`
@@ -1046,39 +947,28 @@ func (s *NicService) AssociateIpAddress(p *AssociateIpAddressParams) (*Associate
 }
 
 type AssociateIpAddressResponse struct {
-	JobID                 string `json:"jobid,omitempty"`
-	Account               string `json:"account,omitempty"`
-	Allocated             string `json:"allocated,omitempty"`
-	Associatednetworkid   string `json:"associatednetworkid,omitempty"`
-	Associatednetworkname string `json:"associatednetworkname,omitempty"`
-	Domain                string `json:"domain,omitempty"`
-	Domainid              string `json:"domainid,omitempty"`
-	Fordisplay            bool   `json:"fordisplay,omitempty"`
-	Forvirtualnetwork     bool   `json:"forvirtualnetwork,omitempty"`
-	Id                    string `json:"id,omitempty"`
-	Ipaddress             string `json:"ipaddress,omitempty"`
-	Isportable            bool   `json:"isportable,omitempty"`
-	Issourcenat           bool   `json:"issourcenat,omitempty"`
-	Isstaticnat           bool   `json:"isstaticnat,omitempty"`
-	Issystem              bool   `json:"issystem,omitempty"`
-	Networkid             string `json:"networkid,omitempty"`
-	Physicalnetworkid     string `json:"physicalnetworkid,omitempty"`
-	Project               string `json:"project,omitempty"`
-	Projectid             string `json:"projectid,omitempty"`
-	Purpose               string `json:"purpose,omitempty"`
-	State                 string `json:"state,omitempty"`
-	Tags                  []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	JobID                     string `json:"jobid,omitempty"`
+	Account                   string `json:"account,omitempty"`
+	Allocated                 string `json:"allocated,omitempty"`
+	Associatednetworkid       string `json:"associatednetworkid,omitempty"`
+	Associatednetworkname     string `json:"associatednetworkname,omitempty"`
+	Domain                    string `json:"domain,omitempty"`
+	Domainid                  string `json:"domainid,omitempty"`
+	Fordisplay                bool   `json:"fordisplay,omitempty"`
+	Forvirtualnetwork         bool   `json:"forvirtualnetwork,omitempty"`
+	Id                        string `json:"id,omitempty"`
+	Ipaddress                 string `json:"ipaddress,omitempty"`
+	Isportable                bool   `json:"isportable,omitempty"`
+	Issourcenat               bool   `json:"issourcenat,omitempty"`
+	Isstaticnat               bool   `json:"isstaticnat,omitempty"`
+	Issystem                  bool   `json:"issystem,omitempty"`
+	Networkid                 string `json:"networkid,omitempty"`
+	Physicalnetworkid         string `json:"physicalnetworkid,omitempty"`
+	Project                   string `json:"project,omitempty"`
+	Projectid                 string `json:"projectid,omitempty"`
+	Purpose                   string `json:"purpose,omitempty"`
+	State                     string `json:"state,omitempty"`
+	Tags                      []Tag  `json:"tags,omitempty"`
 	Virtualmachinedisplayname string `json:"virtualmachinedisplayname,omitempty"`
 	Virtualmachineid          string `json:"virtualmachineid,omitempty"`
 	Virtualmachinename        string `json:"virtualmachinename,omitempty"`

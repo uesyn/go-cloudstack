@@ -222,30 +222,19 @@ type ListPortForwardingRulesResponse struct {
 }
 
 type PortForwardingRule struct {
-	Cidrlist       string `json:"cidrlist,omitempty"`
-	Fordisplay     bool   `json:"fordisplay,omitempty"`
-	Id             string `json:"id,omitempty"`
-	Ipaddress      string `json:"ipaddress,omitempty"`
-	Ipaddressid    string `json:"ipaddressid,omitempty"`
-	Networkid      string `json:"networkid,omitempty"`
-	Privateendport string `json:"privateendport,omitempty"`
-	Privateport    string `json:"privateport,omitempty"`
-	Protocol       string `json:"protocol,omitempty"`
-	Publicendport  string `json:"publicendport,omitempty"`
-	Publicport     string `json:"publicport,omitempty"`
-	State          string `json:"state,omitempty"`
-	Tags           []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	Cidrlist                  string `json:"cidrlist,omitempty"`
+	Fordisplay                bool   `json:"fordisplay,omitempty"`
+	Id                        string `json:"id,omitempty"`
+	Ipaddress                 string `json:"ipaddress,omitempty"`
+	Ipaddressid               string `json:"ipaddressid,omitempty"`
+	Networkid                 string `json:"networkid,omitempty"`
+	Privateendport            string `json:"privateendport,omitempty"`
+	Privateport               string `json:"privateport,omitempty"`
+	Protocol                  string `json:"protocol,omitempty"`
+	Publicendport             string `json:"publicendport,omitempty"`
+	Publicport                string `json:"publicport,omitempty"`
+	State                     string `json:"state,omitempty"`
+	Tags                      []Tag  `json:"tags,omitempty"`
 	Virtualmachinedisplayname string `json:"virtualmachinedisplayname,omitempty"`
 	Virtualmachineid          string `json:"virtualmachineid,omitempty"`
 	Virtualmachinename        string `json:"virtualmachinename,omitempty"`
@@ -423,31 +412,20 @@ func (s *NatPortForwardService) CreatePortForwardingRule(p *CreatePortForwarding
 }
 
 type CreatePortForwardingRuleResponse struct {
-	JobID          string `json:"jobid,omitempty"`
-	Cidrlist       string `json:"cidrlist,omitempty"`
-	Fordisplay     bool   `json:"fordisplay,omitempty"`
-	Id             string `json:"id,omitempty"`
-	Ipaddress      string `json:"ipaddress,omitempty"`
-	Ipaddressid    string `json:"ipaddressid,omitempty"`
-	Networkid      string `json:"networkid,omitempty"`
-	Privateendport string `json:"privateendport,omitempty"`
-	Privateport    string `json:"privateport,omitempty"`
-	Protocol       string `json:"protocol,omitempty"`
-	Publicendport  string `json:"publicendport,omitempty"`
-	Publicport     string `json:"publicport,omitempty"`
-	State          string `json:"state,omitempty"`
-	Tags           []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	JobID                     string `json:"jobid,omitempty"`
+	Cidrlist                  string `json:"cidrlist,omitempty"`
+	Fordisplay                bool   `json:"fordisplay,omitempty"`
+	Id                        string `json:"id,omitempty"`
+	Ipaddress                 string `json:"ipaddress,omitempty"`
+	Ipaddressid               string `json:"ipaddressid,omitempty"`
+	Networkid                 string `json:"networkid,omitempty"`
+	Privateendport            string `json:"privateendport,omitempty"`
+	Privateport               string `json:"privateport,omitempty"`
+	Protocol                  string `json:"protocol,omitempty"`
+	Publicendport             string `json:"publicendport,omitempty"`
+	Publicport                string `json:"publicport,omitempty"`
+	State                     string `json:"state,omitempty"`
+	Tags                      []Tag  `json:"tags,omitempty"`
 	Virtualmachinedisplayname string `json:"virtualmachinedisplayname,omitempty"`
 	Virtualmachineid          string `json:"virtualmachineid,omitempty"`
 	Virtualmachinename        string `json:"virtualmachinename,omitempty"`

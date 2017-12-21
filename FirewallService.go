@@ -173,18 +173,7 @@ type FirewallRule struct {
 	Protocol    string `json:"protocol,omitempty"`
 	Startport   int    `json:"startport,omitempty"`
 	State       string `json:"state,omitempty"`
-	Tags        []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	Tags        []Tag  `json:"tags,omitempty"`
 }
 
 type CreateFirewallRuleParams struct {
@@ -346,18 +335,7 @@ type CreateFirewallRuleResponse struct {
 	Protocol    string `json:"protocol,omitempty"`
 	Startport   int    `json:"startport,omitempty"`
 	State       string `json:"state,omitempty"`
-	Tags        []struct {
-		Account      string `json:"account,omitempty"`
-		Customer     string `json:"customer,omitempty"`
-		Domain       string `json:"domain,omitempty"`
-		Domainid     string `json:"domainid,omitempty"`
-		Key          string `json:"key,omitempty"`
-		Project      string `json:"project,omitempty"`
-		Projectid    string `json:"projectid,omitempty"`
-		Resourceid   string `json:"resourceid,omitempty"`
-		Resourcetype string `json:"resourcetype,omitempty"`
-		Value        string `json:"value,omitempty"`
-	} `json:"tags,omitempty"`
+	Tags        []Tag  `json:"tags,omitempty"`
 }
 
 type DeleteFirewallRuleParams struct {
