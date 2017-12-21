@@ -8,11 +8,13 @@ A KDDI Cloud Platform Service API client enabling Go programs to interact with K
 ## Example
 
 ```go
-// Create a new API client
+// API Clientを生成する
 cli := gokcps.NewAsyncClient("api_endpoint", "api_key", "secret_key" , false) 
 
-// Create a new parameter struct.  
-// If you don't specify a specific network, 'PublicFrontSegment' is used as network that is used for virtual machine.
+// APIを叩くためのパラメータを生成する.  
+// gokcpsでKCPSのAPIを叩く場合は対称のAPIのパラメータオブジェクトを生成し、そのパラメータオブジェクトを実際にAPIを叩くメソッドの引数とする.
+// パラメータオブジェクト生成するメソッドは全てNew***Paramsの命名規則を持つ.
+// パラメータオブジェクト生成時にはAPIを叩くために必須のパラメータを引数として渡す必要がある(一部例外あり)
 p := cli.VirtualMachine.NewDeployValueVirtualMachineParams(
 	"service-offering-id", 
 	"template-id", 
@@ -20,12 +22,11 @@ p := cli.VirtualMachine.NewDeployValueVirtualMachineParams(
 	"vmname",
 )
 
-// If you want to change or add some parameters,
-// You can set with following parameter's method.
-// Set any other options required by your setup in the same way.
+// パラメータオブジェクトにはAPIで利用可能なその他のオプションをSet***メソッドで追加可能.
 p.SetName("vmname2")
 
-// Create the new instance
+// 上記で生成したパラメータを引数にAPIを実行.
+// 全てのAPI実行メソッドには一つ目の返り値にResponseオブジェクトと、二つ目の返り値に実行エラーが帰ってくる.(成功時にはnil)
 r, err := cli.VirtualMachine.DeployValueVirtualMachine(p)
 if err != nil {
 	log.Fatalf("Error creating the new instance %s: %s", name, err)
