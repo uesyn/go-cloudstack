@@ -24,6 +24,21 @@ import (
 	"strings"
 )
 
+const (
+	ResourcetypeUserVM             = "UserVM"
+	ResourcetypeTemplate           = "Template"
+	ResourcetypeISO                = "ISO"
+	ResourcetypeVolume             = "Volume"
+	ResourcetypeSnapshot           = "Snapshot"
+	ResourcetypeNetwork            = "Network"
+	ResourcetypeLoadBalancer       = "LoadBalancer"
+	ResourcetypePortForwardingRule = "PortForwardingRule"
+	ResourcetypeFirewallRule       = "FirewallRule"
+	ResourcetypeSecurityGroupRule  = "SecurityGroupRule"
+	ResourcetypePublicIpAddress    = "PublicIpAddress"
+	ResourcetypeVMSnapshot         = "VMSnapshot"
+)
+
 type CreateTagsParams struct {
 	p map[string]interface{}
 }
