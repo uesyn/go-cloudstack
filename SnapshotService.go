@@ -629,7 +629,7 @@ type RevertToVMSnapshotResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`

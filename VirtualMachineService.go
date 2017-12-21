@@ -281,7 +281,7 @@ type DeployValueVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -424,7 +424,7 @@ type DestroyVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -572,7 +572,7 @@ type RebootVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -720,7 +720,7 @@ type StartVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -885,7 +885,7 @@ type StopVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -1038,7 +1038,7 @@ type ResetPasswordForVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -1243,7 +1243,7 @@ type VirtualMachine struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -1381,7 +1381,7 @@ type ChangeServiceForVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -1780,7 +1780,7 @@ type DeployPremiumVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
