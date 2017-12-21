@@ -151,7 +151,7 @@ type AttachIsoResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -161,7 +161,7 @@ type AttachIsoResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -293,7 +293,7 @@ type DetachIsoResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -303,7 +303,7 @@ type DetachIsoResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`

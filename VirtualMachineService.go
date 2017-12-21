@@ -271,7 +271,7 @@ type DeployValueVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -281,7 +281,7 @@ type DeployValueVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -414,7 +414,7 @@ type DestroyVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -424,7 +424,7 @@ type DestroyVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -562,7 +562,7 @@ type RebootVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -572,7 +572,7 @@ type RebootVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -710,7 +710,7 @@ type StartVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -720,7 +720,7 @@ type StartVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -875,7 +875,7 @@ type StopVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -885,7 +885,7 @@ type StopVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -1028,7 +1028,7 @@ type ResetPasswordForVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -1038,7 +1038,7 @@ type ResetPasswordForVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -1233,7 +1233,7 @@ type VirtualMachine struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -1243,7 +1243,7 @@ type VirtualMachine struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -1371,7 +1371,7 @@ type ChangeServiceForVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -1381,7 +1381,7 @@ type ChangeServiceForVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
@@ -1770,7 +1770,7 @@ type DeployPremiumVirtualMachineResponse struct {
 	Name                  string            `json:"name,omitempty"`
 	Networkkbsread        int64             `json:"networkkbsread,omitempty"`
 	Networkkbswrite       int64             `json:"networkkbswrite,omitempty"`
-	Nic                   []Nic             `json:"nic,omitempty"`
+	Nics                  []Nic             `json:"nic,omitempty"`
 	Ostypeid              int64             `json:"ostypeid,omitempty"`
 	Password              string            `json:"password,omitempty"`
 	Passwordenabled       bool              `json:"passwordenabled,omitempty"`
@@ -1780,7 +1780,7 @@ type DeployPremiumVirtualMachineResponse struct {
 	Publicipid            string            `json:"publicipid,omitempty"`
 	Rootdeviceid          int64             `json:"rootdeviceid,omitempty"`
 	Rootdevicetype        string            `json:"rootdevicetype,omitempty"`
-	Securitygroup         []Securitygroup   `json:"securitygroup,omitempty"`
+	Securitygroups        []Securitygroup   `json:"securitygroup,omitempty"`
 	Serviceofferingid     string            `json:"serviceofferingid,omitempty"`
 	Serviceofferingname   string            `json:"serviceofferingname,omitempty"`
 	Servicestate          string            `json:"servicestate,omitempty"`
