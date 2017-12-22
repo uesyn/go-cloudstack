@@ -32,6 +32,7 @@ import (
 	"regexp"
 	"sort"
 	"strings"
+	"sync"
 	"time"
 )
 
@@ -63,6 +64,8 @@ func (e *CSError) Error() error {
 
 type KCPSClient struct {
 	HTTPGETOnly bool // If `true` only use HTTP GET calls
+
+	lock *sync.Mutex
 
 	client  *http.Client // The http client for communicating
 	baseURL string       // The base URL of the API
@@ -127,6 +130,7 @@ func newClient(apiurl string, apikey string, secret string, async bool, verifyss
 // false so the call ignores the SSL errors/warnings.
 func NewClient(apiurl string, apikey string, secret string, verifyssl bool) *KCPSClient {
 	cs := newClient(apiurl, apikey, secret, false, verifyssl)
+	cs.lock = new(sync.Mutex)
 	return cs
 }
 
@@ -136,6 +140,7 @@ func NewClient(apiurl string, apikey string, secret string, verifyssl bool) *KCP
 // reached it will return the initial object containing the async job ID for the running job and a warning.
 func NewAsyncClient(apiurl string, apikey string, secret string, verifyssl bool) *KCPSClient {
 	cs := newClient(apiurl, apikey, secret, true, verifyssl)
+	cs.lock = new(sync.Mutex)
 	return cs
 }
 
@@ -233,6 +238,9 @@ func (cs *KCPSClient) GetExAsyncJobResult(jobid string, timeout int64) (json.Raw
 // no error occured. If the API returns an error the result will be nil and the HTTP error code and CS
 // error details. If a processing (code) error occurs the result will be nil and the generated error
 func (cs *KCPSClient) newRequest(api string, params url.Values) (json.RawMessage, error) {
+
+	cs.lock.Lock()
+	defer cs.lock.Unlock()
 
 	maxret := 5
 	retry := 0
