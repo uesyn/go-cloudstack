@@ -1795,3 +1795,21 @@ type DeployPremiumVirtualMachineResponse struct {
 	Zoneid                string            `json:"zoneid,omitempty"`
 	Zonename              string            `json:"zonename,omitempty"`
 }
+
+func getNetworkIdByName(cs *KCPSClient, networkname string) (string, error) {
+	params := cs.AccountDomain.NewListNetworksParams()
+	params.SetKeyword(networkname)
+	resp, err := cs.AccountDomain.ListNetworks(params)
+	if err != nil {
+		return "", err
+	}
+
+	if resp.Count > 1 {
+		return "", fmt.Errorf("Multiple network found. Network Name:", networkname)
+	}
+
+	if resp.Count == 0 {
+		return "", fmt.Errorf("Network not found. Network Name:", networkname)
+	}
+	return resp.Networks[0].Id, nil
+}
