@@ -569,7 +569,7 @@ func (s *ISOService) NewRegisterIsoParams(displaytext string, name string, url s
 	p.p["name"] = name
 	p.p["url"] = url
 	p.p["zoneid"] = zoneid
-	p.p["ostypeid"] = zoneid
+	p.p["ostypeid"] = ostypeid
 	return p
 }
 
